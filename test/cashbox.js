@@ -43,7 +43,7 @@ contract("Cashbox" , function(accounts){
 
             assert.equal(aLimit.toNumber() , 1000 , "limit should be 1000");
             assert.equal(aBenef , accounts[1] , "beneficiary should be the second account");
-            assert.equal(owner , accounts[0] , "The owner should be the default account");    
+            assert.equal(owner , accounts[0] , "The owner should be the default account");
 
         })
 
@@ -51,7 +51,7 @@ contract("Cashbox" , function(accounts){
     });
 
 
-    it("contract is persistent over test" , function(done){
+    it("contract is persistent over tests" , function(done){
 
 
         cashbox.limit.call()
