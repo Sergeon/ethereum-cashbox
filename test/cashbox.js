@@ -43,7 +43,7 @@ contract("Cashbox" , function(accounts){
 
             assert.equal(aLimit.toNumber() , 1000 , "limit should be 1000");
             assert.equal(aBenef , accounts[1] , "beneficiary should be the second account");
-            assert.equal(owner , accounts[0] , "The owner should be the defaul accounts");    
+            assert.equal(owner , accounts[0] , "The owner should be the default account");    
 
         })
 
