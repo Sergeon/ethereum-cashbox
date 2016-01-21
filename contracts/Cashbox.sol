@@ -1,7 +1,7 @@
 contract Cashbox{
 
 
-    address owner;
+    address public owner;
 
     uint public limit;
     address public beneficiary;

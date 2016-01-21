@@ -26,14 +26,14 @@ var factory = function factory(Pudding) {
   ;
 
   // Set up specific data for this class.
-  Cashbox.abi = [{ "constant": true, "inputs": [], "name": "beneficiary", "outputs": [{ "name": "", "type": "address" }], "type": "function" }, { "constant": false, "inputs": [], "name": "withdraw", "outputs": [{ "name": "", "type": "bool" }], "type": "function" }, { "constant": true, "inputs": [], "name": "limit", "outputs": [{ "name": "", "type": "uint256" }], "type": "function" }, { "inputs": [{ "name": "_beneficiary", "type": "address" }, { "name": "_limit", "type": "uint256" }], "type": "constructor" }];
-  Cashbox.binary = "606060408181528061010e833960a09052516080516000805433600160a060020a03199182161782556002805490911690931790925560015560c890819061004690396000f3606060405260e060020a600035046338af3eed8114602e5780633ccfd60b14603f578063a4d66daf146060575b005b6068600254600160a060020a031681565b6072600254600090819033600160a060020a039081169116146084575b5090565b607260015481565b6060908152602090f35b60408051918252519081900360200190f35b60015430600160a060020a0316311115605c57600254600160a060020a03908116908290301631606082818181858883f19450505050508015605c5760019150605c56";
+  Cashbox.abi = [{ "constant": true, "inputs": [], "name": "beneficiary", "outputs": [{ "name": "", "type": "address" }], "type": "function" }, { "constant": false, "inputs": [], "name": "withdraw", "outputs": [{ "name": "", "type": "bool" }], "type": "function" }, { "constant": true, "inputs": [], "name": "owner", "outputs": [{ "name": "", "type": "address" }], "type": "function" }, { "constant": true, "inputs": [], "name": "limit", "outputs": [{ "name": "", "type": "uint256" }], "type": "function" }, { "inputs": [{ "name": "_beneficiary", "type": "address" }, { "name": "_limit", "type": "uint256" }], "type": "constructor" }];
+  Cashbox.binary = "6060604081815280610132833960a09052516080516000805433600160a060020a03199182161782556002805490911690931790925560015560ec90819061004690396000f3606060405260e060020a600035046338af3eed811460385780633ccfd60b1460495780638da5cb5b14606a578063a4d66daf14607b575b005b6083600254600160a060020a031681565b6096600254600090819033600160a060020a0390811691161460a8575b5090565b6083600054600160a060020a031681565b609660015481565b600160a060020a03166060908152602090f35b60408051918252519081900360200190f35b60015430600160a060020a0316311115606657600254600160a060020a03908116908290301631606082818181858883f1945050505050801560665760019150606656";
 
-  if ("0x531e2fb1397b583d101bd0a7d975e39aab2492ba" != "") {
-    Cashbox.address = "0x531e2fb1397b583d101bd0a7d975e39aab2492ba";
+  if ("0x67272de9bc1290dc04fcd27055fcc42e42b1d548" != "") {
+    Cashbox.address = "0x67272de9bc1290dc04fcd27055fcc42e42b1d548";
 
     // Backward compatibility; Deprecated.
-    Cashbox.deployed_address = "0x531e2fb1397b583d101bd0a7d975e39aab2492ba";
+    Cashbox.deployed_address = "0x67272de9bc1290dc04fcd27055fcc42e42b1d548";
   }
 
   Cashbox.generated_with = "1.0.3";
