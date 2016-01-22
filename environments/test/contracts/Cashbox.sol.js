@@ -29,11 +29,11 @@ var factory = function factory(Pudding) {
   Cashbox.abi = [{ "constant": true, "inputs": [], "name": "beneficiary", "outputs": [{ "name": "", "type": "address" }], "type": "function" }, { "constant": false, "inputs": [], "name": "withdraw", "outputs": [{ "name": "", "type": "bool" }], "type": "function" }, { "constant": true, "inputs": [], "name": "owner", "outputs": [{ "name": "", "type": "address" }], "type": "function" }, { "constant": true, "inputs": [], "name": "limit", "outputs": [{ "name": "", "type": "uint256" }], "type": "function" }, { "inputs": [{ "name": "_beneficiary", "type": "address" }, { "name": "_limit", "type": "uint256" }], "type": "constructor" }];
   Cashbox.binary = "6060604081815280610132833960a09052516080516000805433600160a060020a03199182161782556002805490911690931790925560015560ec90819061004690396000f3606060405260e060020a600035046338af3eed811460385780633ccfd60b1460495780638da5cb5b14606a578063a4d66daf14607b575b005b6083600254600160a060020a031681565b6096600254600090819033600160a060020a0390811691161460a8575b5090565b6083600054600160a060020a031681565b609660015481565b600160a060020a03166060908152602090f35b60408051918252519081900360200190f35b60015430600160a060020a0316311115606657600254600160a060020a03908116908290301631606082818181858883f1945050505050801560665760019150606656";
 
-  if ("0x67272de9bc1290dc04fcd27055fcc42e42b1d548" != "") {
-    Cashbox.address = "0x67272de9bc1290dc04fcd27055fcc42e42b1d548";
+  if ("0x519c5c0ef273ef9bcb9d99fe3d6235a2dcb80c35" != "") {
+    Cashbox.address = "0x519c5c0ef273ef9bcb9d99fe3d6235a2dcb80c35";
 
     // Backward compatibility; Deprecated.
-    Cashbox.deployed_address = "0x67272de9bc1290dc04fcd27055fcc42e42b1d548";
+    Cashbox.deployed_address = "0x519c5c0ef273ef9bcb9d99fe3d6235a2dcb80c35";
   }
 
   Cashbox.generated_with = "1.0.3";

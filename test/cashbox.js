@@ -84,42 +84,100 @@ contract("Cashbox" , function(accounts){
         } )
 
         .then(function(balance_beneficiary_before_send){
+
+
             balanceBeforeSend = balance_beneficiary_before_send;
 
             console.log("The beneficiary balance before sending funds is : " + balance_beneficiary_before_send.toNumber() );
 
-            return web3.eth.getBalance(cashbox.address);
+            return new Promise( function(resolve , error ){
+
+                    return web3.eth.getBalance(cashbox.address, function(err, hashValue ){
+
+                            if(err)
+                                return error(err);
+                            else {
+                                return resolve(hashValue);
+                            }
+                    }) ;
+            } )
         })
 
 
         .then(function(balance_cashbox_before_send){
 
             console.log("Balance of cashbox contract before send is : " + balance_cashbox_before_send.toNumber() );
-            return web3.eth.sendTransaction({  to : cashbox.address , value : "2000000000000000000" , from : accounts[1] } );
+
+
+            return new Promise( function(resolve , reject){
+
+                web3.eth.sendTransaction({  to : cashbox.address , value : "2000000000000000000" , from : accounts[1] }  , function(err , success ){
+
+                    if (err)
+                        return reject(err);
+                    else
+                        return resolve(success);
+
+                });
+
+            } );//end promise
+
         })
 
         .then(function(txResult){
 
-            return web3.eth.getBalance(cashbox.address  );
+            return new Promise( function(resolve , error ){
+
+                    return web3.eth.getBalance(cashbox.address, function(err, hashValue ){
+
+                            if(err)
+                                return error(err);
+                            else {
+                                return resolve(hashValue);
+                            }
+                    }) ;
+            } )
         })
 
         .then(function(balance_cashbox_after_send ){
 
             console.log("balance of contract cashbox after ether send : " + balance_cashbox_after_send.toNumber() );
 
-            return web3.eth.getBalance(accounts[1]);
+            return new Promise( function(resolve , error ){
+
+                    return web3.eth.getBalance(accounts[1], function(err, hashValue ){
+
+                            if(err)
+                                return error(err);
+                            else {
+                                return resolve(hashValue);
+                            }
+                    }) ;
+            } )
 
         })
 
         .then(function(balance_beneficiary_after_send){
+
             balanceAfterSend = balance_beneficiary_after_send;
             console.log("balance of beneficiary after the send transaction : " + balance_beneficiary_after_send.toNumber() );
+            
             return cashbox.withdraw({from : accounts[1] });
         })
 
         .then(function(withdrawResult){
 
-            return web3.eth.getBalance(accounts[0]);
+            return new Promise( function(resolve , error ){
+
+                    return web3.eth.getBalance(accounts[1], function(err, hashValue ){
+
+                            if(err)
+                                return error(err);
+                            else {
+                                return resolve(hashValue);
+                            }
+                    }) ;
+            } )
         })
 
 
@@ -127,7 +185,17 @@ contract("Cashbox" , function(accounts){
             balanceAfterWithdraw = balance_beneficiary_after_withdraw;
             console.log("balance of beneficiary after witdraw : " + balance_beneficiary_after_withdraw.toNumber() );
 
-            return web3.eth.getBalance(cashbox.address);
+            return new Promise( function(resolve , error ){
+
+                    return web3.eth.getBalance(cashbox.address, function(err, hashValue ){
+
+                            if(err)
+                                return error(err);
+                            else {
+                                return resolve(hashValue);
+                            }
+                    }) ;
+            } )
         })
 
         .then(function(balance_cashbox_after_withdraw){
